@@ -17,13 +17,14 @@
   <link rel="icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
   
   <!-- CSS: implied media="all" -->
+  {% load static %}
   {# load compress #}
   {# compress css #}
   {% block styles %}
-  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
-  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css">
-  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/smartmin_styles.css">
-  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+  <link type="text/css" rel="stylesheet" href="{%  static 'css/bootstrap.css' %}">
+  <link type="text/css" rel="stylesheet" href="{%  static 'css/bootstrap-theme.css' %}">
+  <link type="text/css" rel="stylesheet" href="{%  static 'css/smartmin_styles.css' %}">
+  <link type="text/css" rel="stylesheet" href="{%  static 'css/styles.css' %}">
   {% endblock %}
 
   {% block extra-style %}{% endblock %}
@@ -133,10 +134,10 @@
   {% endblock %}
   
   {# compress js #}
-  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/../static/js/jquery.pjax.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/../static/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"></script>
-  
+  <script type="text/javascript" src="{%  static 'js/jquery.pjax.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'js/scripts.js' %}"></script>
+
   {# media associated with any form we are displaying #}
   {% if form %}
   {{ form.media }}
